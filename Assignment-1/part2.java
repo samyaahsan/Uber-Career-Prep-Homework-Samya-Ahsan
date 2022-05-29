@@ -49,6 +49,7 @@ public class part2{
                 pair.add(search);
                 pairs.add(pair);
             }
+            inputArray.remove(i);
 
         }
         return pairs;
@@ -65,7 +66,7 @@ public class part2{
         inputToPairs.add(3);
 
 
-        List<List<Integer>> sumPairs = pairsThatEqualSum(inputToPairs, 3);
+        List<List<Integer>> sumPairs = pairsThatEqualSum(inputToPairs, 4);
         System.out.println(sumPairs + "\n");
 
    
