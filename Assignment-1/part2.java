@@ -16,7 +16,7 @@ public class part2{
                 }
             }
         }
-        
+
         //if string 1 is longer than string 2, create set accordingly
         if (s2.length() < s1.length()){
             for (int i = 0; i < s1.length(); i++){
@@ -38,9 +38,36 @@ public class part2{
         return true;
     }
 
+    public static List<List<Integer>> pairsThatEqualSum(List<Integer> inputArray, Integer targetSum) {
+        List<List<Integer>> pairs = new ArrayList<>();
+
+        for (int i = 0; i < inputArray.size(); i++){
+            List<Integer> pair = new ArrayList<>();
+            Integer search = targetSum - inputArray.get(i);
+            if (inputArray.contains(search)){
+                pair.add(inputArray.get(i));
+                pair.add(search);
+                pairs.add(pair);
+            }
+
+        }
+        return pairs;
+        
+    }
+
     public static void main(String args[]) {
         boolean isString = isStringPermutation("asfd", "fsa");
-        System.out.println(isString);
+        System.out.println(isString + "\n");
+
+        List<Integer> inputToPairs = new ArrayList<>();
+        inputToPairs.add(1);
+        inputToPairs.add(2);
+        inputToPairs.add(3);
+
+
+        List<List<Integer>> sumPairs = pairsThatEqualSum(inputToPairs, 3);
+        System.out.println(sumPairs + "\n");
+
    
     }
 }
